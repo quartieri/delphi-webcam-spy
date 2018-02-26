@@ -1,0 +1,40 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{5006590a-e247-4d63-a2ef-5557b1f81612}</ProjectGuid>
+  </PropertyGroup>
+  <ItemGroup />
+  <ItemGroup />
+  <ProjectExtensions>
+    <Borland.Personality>Default.Personality</Borland.Personality>
+    <Borland.ProjectType />
+    <BorlandProject>
+  <BorlandProject xmlns=""> <Default.Personality> </Default.Personality> </BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Target Name="WebCamVigia">
+    <MSBuild Projects="WebCamVigia.dproj" Targets="" />
+  </Target>
+  <Target Name="WebCamVigia:Clean">
+    <MSBuild Projects="WebCamVigia.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="WebCamVigia:Make">
+    <MSBuild Projects="WebCamVigia.dproj" Targets="Make" />
+  </Target>
+  <Target Name="moveaction">
+    <MSBuild Projects="ARQUIVOS ORIGINAIS\programa original\moveaction.dproj" Targets="" />
+  </Target>
+  <Target Name="moveaction:Clean">
+    <MSBuild Projects="ARQUIVOS ORIGINAIS\programa original\moveaction.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="moveaction:Make">
+    <MSBuild Projects="ARQUIVOS ORIGINAIS\programa original\moveaction.dproj" Targets="Make" />
+  </Target>
+  <Target Name="Build">
+    <CallTarget Targets="WebCamVigia;moveaction" />
+  </Target>
+  <Target Name="Clean">
+    <CallTarget Targets="WebCamVigia:Clean;moveaction:Clean" />
+  </Target>
+  <Target Name="Make">
+    <CallTarget Targets="WebCamVigia:Make;moveaction:Make" />
+  </Target>
+</Project>
